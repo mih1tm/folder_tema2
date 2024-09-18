@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>Buna ziua!</h1></header>
+    <br>
+    <p>
+        <label for="numele_orasului">Numele orasului:</label>
+        <input type="text" id="numele_orasului" name="numele_orasului"><br>
+        <label for="numar_locuitori">Numar locuitori:</label>
+        <input type="number" id="numar_locuitori" name="numar_locuitori"><br>
+    </p>
+    
+    <p2>
+        <form id="form1">
+            <label for="municipiu">Municipiu</label>
+            <input type="radio" id="municipiu"  name="element_selectie_2v" value = 1><br>
+            <label for="resedinta_de_judet">Resedinta de judet</label>
+            <input type="radio" id="resedinta_de_judet" name="element_selectie_2v" value = 2>
+        </form>
+    </p2>
+    <br><br>
+    <p3>
+        <form id="form2">
+            <label for="stadion">Are stadion</label>
+            <input type="checkbox" id="stadion"    name="element_selectie_4v" value="1"><br>
+            <label for="teatru">Are teatru</label>
+            <input type="checkbox" id="teatru" name="element_selectie_4v"  value="2"><br>
+            <label for="biblioteca">Are biblioteca</label>
+            <input type="checkbox" id="biblioteca" name="element_selectie_4v"  value="3"><br>
+            <label for="cinema">Are cinema</label>
+            <input type="checkbox" id="cinema" name="element_selectie_4v"  value="4"><br>
+
+        </form>
+    </p3>
+    <br><br>
+    <button onclick="oras.salveaza_oras()">Salveaza</button>
+
+    <br>
+    <br>
+    <br>
+    <button onclick="afiseaza()">Afiseaza!</button>
+    <p id="print_oras"></p>
+
+</body>
+
+<script>
+
+
+let oras = {
+    nume_oras: "",
+    numar_loc: "",
+    res_mun: "",
+    
+
+    salveaza_oras: function() {
+        this.nume_oras = document.getElementById("numele_orasului").value
+        this.numar_loc = document.getElementById("numar_locuitori").value
+        
+        this.res_mun = document.querySelector("form1").value
+
+        
+
+        console.log(this.res_mun)
+        console.log(this.nume_oras + this.numar_loc)
+        console.log(oras)
+    }   
+}
+
+function afiseaza(){
+    document.getElementById("print_oras").innerHTML = oras.nume_oras + oras.numar_loc
+}
+
+
+
+
+/*function salveaza_oras(){
+    let name = 0
+    let locuitori = 0
+    let form_mun_res = 0
+    
+    
+     name = document.getElementById("numele_orasului").value
+     locuitori = document.getElementById("numar_locuitori").value
+     form_mun_res = document.getElementById("element_selectie_2v").value
+
+     
+}*/
+
+
+
+</script>
+
+</html>
