@@ -52,6 +52,8 @@
 
 <script>
 
+document.getElementById("municipiu").checked = true
+
 function activate_afiseaza_button(){
     let lungime_text = document.getElementById("numele_orasului").value.length
 
@@ -65,8 +67,6 @@ function activate_afiseaza_button(){
     }
 
 }
-
-document.getElementById("municipiu").checked = true
 
 let oras = {
     nume_oras: "",
